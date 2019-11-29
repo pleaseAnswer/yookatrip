@@ -19,4 +19,12 @@ Router.get('/shouye', async (req, res) => {
     }))
 })
 
+//查询数据库
+Router.get('/activity', async (req, res) => {
+    //查询数据库
+    let result = await find('activity'); //得到一个promise对象
+    res.send(formatData({
+        data: result
+    }))
+})
 module.exports = Router;
