@@ -1,5 +1,6 @@
 import React,{Component} from 'react';
 import moment from 'moment';
+import LazyLoad from 'react-lazyload';
 import my from '../api/my';
 import '../css/Ativity.scss';
 import { Icon } from 'antd';
@@ -42,7 +43,9 @@ class Activity extends Component{
                     {this.state.menu.map(item => {
                         return <article key={item.id}>
                             <figure className="act-wrap">
-                                <img src={item.coverPicUrl} alt="" className="act-img"/>
+                                <LazyLoad height={200}>
+                                    <img src={item.coverPicUrl} alt="" className="act-img"/>
+                                </LazyLoad>
                                 <figcaption>
                                     <h5>{item.title}</h5>
                                     <p className="act-time">
