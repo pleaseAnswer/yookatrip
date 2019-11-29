@@ -19,4 +19,13 @@ Router.get('/shouye', async (req, res) => {
     }))
 })
 
+// 相册
+Router.get('/photo', async (req, res) => {
+    //查询数据库
+    let result = await find('photo'); //得到一个promise对象
+    res.send(formatData({
+        data: result
+    }))
+})
+
 module.exports = Router;
