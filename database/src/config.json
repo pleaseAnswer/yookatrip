@@ -1,5 +1,5 @@
 {
     "PORT": 1910,
-    "mongodbUrl": "mongodb://localhost:27017",
+    "mongodbUrl": "mongodb://10.3.136.27:27017",
     "dbName": "youke"
 }

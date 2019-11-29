@@ -15,6 +15,7 @@ import Photoxiangqing from './pages/Photoxiangqing.jsx'
 import Photolist from './pages/Photolist.jsx'
 import Particulars from './pages/Particulars.jsx'
 import Cart from './pages/Cart.jsx'
+import Guide from './pages/Guide.jsx'
 
 
 class App extends React.Component {
@@ -66,6 +67,7 @@ class App extends React.Component {
                     <Route path="/photolist" component={Photolist} />
                     <Route path="/particulars" component={Particulars} />
                     <Route path="/cart" component={Cart} />
+                    <Route path="/guide/:id" component={Guide} />
                     <Route path="/notfound" render={() => <div>404页面</div>} />
                     <Redirect from="/" to="/home" exact />
                     <Redirect to="/notfound" />
