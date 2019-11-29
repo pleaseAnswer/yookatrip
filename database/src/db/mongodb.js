@@ -116,6 +116,7 @@ async function find(colName, query = {}, options = {}) {
     if (query._id && typeof query._id === 'string') {
         query._id = ObjectId(query._id)
     }
+    
     //在数据库查找
     let result = await collection.find(query, {
         fields

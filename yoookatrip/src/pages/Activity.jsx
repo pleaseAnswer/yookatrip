@@ -11,20 +11,17 @@ class Activity extends Component{
     }
     getData = async () =>{
         let {data:{data}} = await my.get('/database/activity');
-        console.log(data);
-        let result = data[0].result;
         this.setState({
-            menu: result
+            menu: data
         })
-        console.log(this.state);
+    }
+    goto = (id) => {
+        this.props.history.push(`/particulars/${id}`);
     }
     componentDidMount(){
         this.getData();
-        const wrapper = this.refs.mywrap;
     }
     render(){
-        console.log('this.state.menu',this.state.menu);
-        
         return (
             <div>
                 <header className="uiNavbar">
@@ -41,7 +38,7 @@ class Activity extends Component{
                 </div>
                 <div className="main">
                     {this.state.menu.map(item => {
-                        return <article key={item.id}>
+                        return <article key={item.id}  onClick={this.goto.bind(this,item._id)}>
                             <figure className="act-wrap">
                                 <LazyLoad height={200}>
                                     <img src={item.coverPicUrl} alt="" className="act-img"/>
