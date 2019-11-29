@@ -26,19 +26,46 @@ Router.get('/list', async (req, res) => {
         data: result
     }))
 })
+//查询数据库
+Router.get('/activity', async (req, res) => {
+    //查询数据库
+    let result = await find('activity'); //得到一个promise对象
+    res.send(formatData({
+        data: result
+    }))
+})
 //查询单个用户信息
 Router.get('/:id', async (req, res) => {
     let {
         id
     } = req.params;
     //查询数据库
-    let result = await find('list', {
+    let result = await find(colName, {
         _id: id
     }, {
         fields: {
             password: false
         }
     }); //fields过滤某字符，这里表示password不显示出来
+    res.send(formatData({
+        data: result
+    }))
+})
+//查询数据库
+Router.get('/activity/:id', async (req, res) => {
+    //查询数据库
+    let id = req.params.id;
+    let result = await find('activity', {
+        _id: id
+    }); //得到一个promise对象
+    res.send(formatData({
+        data: result
+    }))
+})
+
+Router.get('/xiangqing', async (req, res) => {
+    //查询数据库
+    let result = await find('xiangqing'); //得到一个promise对象
     res.send(formatData({
         data: result
     }))
