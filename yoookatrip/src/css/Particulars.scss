@@ -217,8 +217,10 @@ body {
             h5{
                 width: 100%;
                 height: vw(78);
+                word-wrap: nowrap;
+                overflow: hidden;
                 font-size: vw(30);
-                line-height: vw(30);
+                line-height: vw(78);
                 color: #333;
                 padding: vw(24) vw(24) vw(10) 0;
             }
