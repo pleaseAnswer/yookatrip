@@ -16,6 +16,7 @@ import Photolist from './pages/Photolist.jsx'
 import Particulars from './pages/Particulars.jsx'
 import Cart from './pages/Cart.jsx'
 import Guide from './pages/Guide.jsx'
+import Trip from './pages/Trip.jsx'
 
 
 class App extends React.Component {
@@ -68,6 +69,7 @@ class App extends React.Component {
                     <Route path="/particulars/:id" component={Particulars} />
                     <Route path="/cart" component={Cart} />
                     <Route path="/guide/:id" component={Guide} />
+                    <Route path="/trip" component={Trip}/>
                     <Route path="/notfound" render={() => <div>404页面</div>} />
                     <Redirect from="/" to="/home" exact />
                     <Redirect to="/notfound" />

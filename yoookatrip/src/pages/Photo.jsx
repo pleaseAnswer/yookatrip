@@ -13,13 +13,13 @@ class Photo extends Component {
     
     render() {
         return (
-            <div>
-                <header className="uiNavbar  oldIndex">
+            <div className="photo">
+                <div className="uiNavbar">
                     相册
                     <div className="goback"><Icon type="left" onClick={this.go}/></div>
                     <div className="cart"><Icon type="shopping-cart" /></div>
                     <div className="more"><Icon type="bars" /></div>
-                </header>
+                </div>
                 <article className="leftPic">
                     <div className="line"></div>
                     <div className="pic" onClick={this.goto} >
