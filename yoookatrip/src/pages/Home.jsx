@@ -33,7 +33,7 @@ class Home extends Component {
         let { banners, data1, data2, data3 } = this.state;
         let list = data2.slice(1);
         return (
-            <div>
+            <div id="home">
                 <header className="uiNavbar">
                     优客旅行
                    <div className="icon1"><Icon type="user" /></div>
@@ -55,7 +55,7 @@ class Home extends Component {
                         <span className="title-setColor">优客活动</span>
                         <span className="setColor">更多 ></span>
                     </div>
-                    <div className="main">
+                    <div className="maina">
                         <ul className="mode-act">
                             {
                                 data1.map(item => {
@@ -78,7 +78,7 @@ class Home extends Component {
                         <span className="title-setColor">精彩片段</span>
                         <span className="setColor">更多 ></span>
                     </div>
-                    <div className="main">
+                    <div className="maina">
                         <ul className="mode-pic">
                             <li className="limax">
                                 <img src="http://img.saihuitong.com/5636/albumimg/4484598/16e16b6b8a8.jpg" alt="" />
