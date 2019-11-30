@@ -43,7 +43,7 @@ class Guide extends Component {
                         </span>
                     </div>
                 </div>
-                <p>{data3.contentSummary}</p>
+                <p className="pass">{data3.contentSummary}</p>
                 <div className="tu">
                     <img src={data3.firstImage} />
                 </div>
