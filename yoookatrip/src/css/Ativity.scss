@@ -42,12 +42,9 @@ body {
     font-size: vw(44);
   }
 }
-.main{
+.act-main{
   margin-top: vw(92);
   margin-bottom: vw(24);
-}
-.footer{
-  margin-bottom: vw(134);
 }
 .act-select{
   width: vw(100);
@@ -182,16 +179,18 @@ article{
     }
   }
 }
-.no-more{
-  text-align: center;
-  padding: vw(24) 0;
-  font-size: vw(24);
-  color: #ccc;
+.act-footer{
+  margin-bottom: vw(134);
+  .no-more{
+    text-align: center;
+    padding: vw(24) 0;
+    font-size: vw(24);
+    color: #ccc;
+  }
+  .skill{
+    text-align: center;
+    font-size: vw(24);
+    padding-top: vw(36);
+    color: #666;
+  }
 }
-.skill{
-  text-align: center;
-  font-size: vw(24);
-  padding-top: vw(36);
-  color: #666;
-}
-

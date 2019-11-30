@@ -36,7 +36,7 @@ class Activity extends Component{
                     <Icon type="funnel-plot" />
                     <p className="act-change">筛选</p>
                 </div>
-                <div className="main">
+                <div className="act-main">
                     {this.state.menu.map(item => {
                         return <article key={item.id}  onClick={this.goto.bind(this,item._id)}>
                             <figure className="act-wrap">
@@ -69,7 +69,7 @@ class Activity extends Component{
                         </article>
                     })}
                 </div>
-                <div className="footer">
+                <div className="act-footer">
                     <p className="no-more">-------没有更多了-------</p>
                     <p className="skill">技术支持：赛会通</p>
                 </div>
