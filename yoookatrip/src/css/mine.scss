@@ -1,0 +1,159 @@
+@charset "utf-8";
+@function vw($px) {
+@return ($px / 750) * 100vw;
+}
+body {
+
+    color: #666;
+    
+    height: 100%;
+}
+
+.box-mine{
+    header{
+        position: relative;
+        height: vw(98);
+        margin: 0 0 vw(60);
+      .boxmine{
+        width: vw(750);
+        height: vw(98);
+        padding: 0  vw(16);
+
+        .anticon-left, .anticon-unordered-list,.anticon-shopping-cart{
+            margin-top: vw(20);
+           color: #FFF;
+            font-size: 24px; 
+        }
+        .anticon-left{
+            float: left;
+        }
+        .anticon-unordered-list,.anticon-shopping-cart{
+            float: right;
+        }
+        .anticon-shopping-cart{
+            margin-right: vw(40);
+        }
+        
+    }
+}
+    .main{
+      
+        margin-top: vw(-156);
+        width: vw(750);
+        height: vw(440);
+        background: url(../img/avatar_bg.jpg) no-repeat;
+        .avatar-wrap{
+           
+            z-index: 999;
+            margin: 0 auto;
+            box-sizing: border-box;
+            transform: translateY(65px);
+            width:vw(150) ;
+            height: vw(150);
+            border-radius: 50%;
+            .pic{
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+                background: url(../img/tou.jpg) no-repeat;
+                background-size:vw(150) vw(150) ;
+
+            }
+            .username{
+                margin-top: vw(24);
+                z-index: 2;
+                line-height:vw(44);
+                color: #fff;
+            }
+             .set{
+                 text-align: center;
+            position: absolute;
+            z-index: 10;
+            right: vw(-275);
+            bottom:vw(-135);
+            width: vw(100);
+            height: vw(40);
+            line-height: vw(40);
+            font-size: 13px;
+            border-radius: vw(20);
+            color: #fff;
+            background-color: rgba(0,0,0,.3);
+        }
+            
+        }
+        .nav-wrap{
+            margin-top: vw(310);
+            border-top: 2px solid #e5e5e5;
+            .icon-angleright{
+                position: relative;
+                height: vw(98);
+                border-bottom: 1px solid #e5e5e5;
+                background-color: #FFF;
+                a{
+                    width: vw(750);
+                    height: vw(98);
+                    display: block;
+                    padding-right: vw(20);
+                  
+                    
+                    p{
+                      float: left;
+                      margin-left: vw(15);
+                      line-height: vw(98);
+                      font-size: 16px;
+                       color: #505050;  
+                    }
+                    .imgicon{
+                        margin-top: vw(25);
+                        display: block;
+                        background:url(../img/sprite.png) no-repeat;
+                        margin-left: vw(15);
+                        width: vw(44);
+                        height: vw(44); 
+                        float: left;
+                    }
+                    .one{
+                        background-size: 160px 476px;
+                        background-position:-1px 0 ;
+                    }
+                    .two{
+                        background-size: 160px 476px;
+                        background-position:-1px -66px ;
+                    }
+                    .three{
+                        background-size: 160px 476px;
+                        background-position:-1px -134px ;
+                    }
+                    .four{
+                        background-size: 160px 476px;
+                        background-position:-1px -198px ;
+                    }
+                    .fire{
+                        background-size: 160px 476px;
+                        background-position:-1px -246px ;
+                    }
+                    .anticon-right{
+                        line-height: vw(98);
+                        color: #505050;
+                        float: right;
+
+                    }
+                }
+
+            }
+        }
+        .tuichu{
+            width: vw(710);
+            height: vw(80);
+            background-color: #02a578;
+            font-size: 16px;
+            color: #fff;
+            text-align: center;
+            line-height: vw(80);
+            margin-top: vw(40);
+            margin-left: vw(18);
+        }
+    }
+}
+   
+
