@@ -72,6 +72,7 @@
 .pass {
   color: #191919;
   padding: 2.66667vw;
+  background: #fff;
 }
 
 .tu {
@@ -83,12 +84,14 @@
 .tu img {
   width: 100%;
   height: 100%;
+  background: #fff;
 }
 
 .wenzi {
   height: 13.33333vw;
   text-align: center;
   border-bottom: 1.06667vw solid rgba(102, 102, 102, 0.062);
+  background: #fff;
 }
 
 .bcw {

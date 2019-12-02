@@ -71,7 +71,7 @@ class App extends React.Component {
                     <Route path="/mine" component={Mine} />
                     <Route path="/login" component={Login} />
                     <Route path="/reg" component={Reg} />
-                    <Route path="/photoxiangqing" component={Photoxiangqing} />
+                    <Route path="/photoxiangqing/:id" component={Photoxiangqing} />
                     <Route path="/photolist" component={Photolist} />
                     <Route path="/particulars/:id" component={Particulars} />
                     <Route path="/cart" component={Cart} />
