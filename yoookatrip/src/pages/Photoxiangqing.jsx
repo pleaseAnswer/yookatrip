@@ -7,6 +7,8 @@ class Photoxiangqing extends Component{
         this.props.history.push(`/Photolist`);
     }
 
+    
+
     render(){
         return (
             <div className="Photoxiangqing">
@@ -22,9 +24,9 @@ class Photoxiangqing extends Component{
                 </div>
                 <div className="comment">
                     <a href=""><img src="http://st.saihuitong.com/res/img/avatars/system/4_ava029.jpg"/></a>
-                    <p className="wen">180***5382&nbsp;&nbsp;&nbsp;&nbsp;10-29&nbsp;&nbsp;&nbsp;&nbsp;16:51:29</p>
-                    <i className="eyeleft"><Icon type="eye" />&nbsp;&nbsp;53</i>
-                    <i className="eyeright"><Icon type="message" />&nbsp;&nbsp;3</i>
+                    <p className="wen_photo">180***5382&nbsp;&nbsp;&nbsp;&nbsp;10-29&nbsp;&nbsp;&nbsp;&nbsp;16:51:29</p>
+                    <i className="eyeleft_photo"><Icon type="eye" />&nbsp;&nbsp;53</i>
+                    <i className="eyeright_photo"><Icon type="message" />&nbsp;&nbsp;3</i>
                 </div>
                 <div className="reply">
                     <h2>网友评论</h2>
@@ -34,7 +36,7 @@ class Photoxiangqing extends Component{
                         <img src="http://st.saihuitong.com/res/img/avatars/system/4_ava029.jpg"/>
                         <a>180****5382</a>
                         <span>2019-11-01&nbsp;&nbsp;21:59</span>
-                        <p className="wen">h</p>
+                        <p className="wenh">h</p>
                     </li>
                     <li>
                         <img src="http://st.saihuitong.com/res/img/avatars/system/6_ava026.jpg"/>

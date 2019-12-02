@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../css/guide.css';
-import { Icon, Steps } from 'antd';
+import { Icon } from 'antd';
 import { my } from '../api';
 class Guide extends Component {
     state = {
@@ -11,8 +11,10 @@ class Guide extends Component {
     }
     async componentDidMount() {
         let { id } = this.props.match.params;
-        let { data: { data } } = await my.get(`database/${id}`);
+
+        let { data: { data } } = await my.get(`/database/guide/${id}`);
         let data3 = data[0]
+
         this.setState({
             data3: data3
         })

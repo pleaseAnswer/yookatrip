@@ -1,57 +1,79 @@
 @charset "utf-8";
+
 @function vw($px) {
-@return ($px / 750) * 100vw;
+    @return ($px / 750) * 100vw;
 }
 
-.trip{
+html,
+body {
+    background: #ffffff;
+}
+
+.trip {
+    background: #ffffff;
+
     .uiNavbar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 10;
-            color: #fff;
-            overflow: hidden;
-            background-color: #02a578;
-            height: vw(88);
-            width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 10;
+        color: #fff;
+        overflow: hidden;
+        background-color: #02a578;
+        height: vw(88);
+        width: 100%;
+
         .goback,
         .cart,
         .more {
             font-size: vw(44);
         }
-        
+
         .goback {
             position: absolute;
             top: 0;
             left: vw(20);
         }
-        
+
         .cart {
             position: absolute;
             top: 0;
             right: vw(88);
         }
-        
+
         .more {
             position: absolute;
             top: 0;
             right: vw(18);
-            }
         }
-    
-   
+    }
 
-    .btn{
+
+
+    .btn {
         width: vw(710);
-        height: vw(80);
-        background: pink;
+        height: vw(75);
         margin-top: vw(110);
         margin-left: vw(20);
-        .btn01{
+
+        .btn01 {
             width: 100%;
             height: 100%;
             text-align: left;
         }
-     }
+    }
+
+    .trip_ul {
+        width: 100%;
+
+        .trip_li {
+            padding: 0 vw(20) 0 vw(20);
+            margin-bottom: vw(40);
+
+            .trip_p {
+                margin: vw(10) 0 vw(10) 0;
+            }
+        }
+    }
 }

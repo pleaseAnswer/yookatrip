@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { my } from '../api'
 import '../css/home.css';
-import { Icon, Carousel } from 'antd';
+import { Icon, Carousel, Menu, Dropdown } from 'antd';
 
 class Home extends Component {
+
     state = {
         banners: [],
         data1: [],
@@ -13,13 +14,16 @@ class Home extends Component {
     goto(id) {
         this.props.history.push(`/guide/${id}`)
     }
+    goto2 = (path) => {
+        this.props.history.push(path)
+    }
     async componentDidMount() {
         let { data: { data } } = await my.get('/database/shouye');
         let database = data[0];
         let data1 = database.modules[0].moduleData;
         let data2 = database.modules[1].moduleData;
-        let a = await my.get('/database/list');
-        let data3 = a.data.data;
+        let list = await my.get('/database/list');
+        let data3 = list.data.data;
 
         this.setState({
             banners: database.banners,
@@ -32,13 +36,63 @@ class Home extends Component {
     render() {
         let { banners, data1, data2, data3 } = this.state;
         let list = data2.slice(1);
+        let menup = (
+            <Menu>
+                <Menu.Item key="0">
+                    <h3 style={{ width: '200px', textAlign: 'center', fontSize: '20px' }}>优客旅行</h3>
+                </Menu.Item>
+                <Menu.Item key="1" onClick={this.goto2.bind(this, '/home')}>
+                    <h3 style={{ width: '200px', position: 'relative' }}>
+                        <span>首页</span>
+                        <span style={{ position: 'absolute', right: '2px', top: '0' }}>></span>
+                    </h3>
+                </Menu.Item>
+                <Menu.Item key="3" onClick={this.goto2.bind(this, '/activity')}>
+                    <h3 style={{ width: '200px', position: 'relative' }}>
+                        <span>优客活动</span>
+                        <span style={{ position: 'absolute', right: '2px', top: '0' }}>></span>
+                    </h3>
+                </Menu.Item>
+                <Menu.Item key="4" onClick={this.goto2.bind(this, '/photo')}>
+                    <h3 style={{ width: '200px', position: 'relative' }}>
+                        <span>相册</span>
+                        <span style={{ position: 'absolute', right: '2px', top: '0' }}>></span>
+                    </h3>
+                </Menu.Item>
+                <Menu.Item key="5" onClick={this.goto2.bind(this, '/trip')}>
+                    <h3 style={{ width: '200px', position: 'relative' }}>
+                        <span>出行贴士</span>
+                        <span style={{ position: 'absolute', right: '2px', top: '0' }}>></span>
+                    </h3>
+                </Menu.Item>
+                <Menu.Item key="6">关于我们 </Menu.Item>
+                <Menu.Divider />
+                <Menu.Item key="7" onClick={this.goto2.bind(this, '/home')}>
+                    <h3 style={{ width: '200px', position: 'relative' }}>
+                        <span>关于优客</span>
+                        <span style={{ position: 'absolute', right: '2px', top: '0' }}>></span>
+                    </h3>
+                </Menu.Item>
+                <Menu.Item key="8" onClick={this.goto2.bind(this, '/mine')}>
+                    <h3 style={{ width: '200px', position: 'relative' }}>
+                        <span>个人中心</span>
+                        <span style={{ position: 'absolute', right: '2px', top: '0' }}>></span>
+                    </h3>
+                </Menu.Item>
+            </Menu >
+        );
         return (
             <div id="home">
                 <header className="uiNavbar">
                     优客旅行
-                   <div className="icon1"><Icon type="user" /></div>
-                    <div className="icon2"><Icon type="shopping-cart" /></div>
-                    <div className="icon3"><Icon type="bars" /></div>
+                   <div className="icon1" onClick={this.goto2.bind(this, '/mine')}><Icon type="user" /></div>
+                    <div className="icon2" onClick={this.goto2.bind(this, '/cart')}><Icon type="shopping-cart" /></div>
+                    <div className="icon3">
+                        <Dropdown overlay={menup} trigger={['click']}>
+                            <Icon type="bars" style={{ color: '#ffffff' }} />
+                        </Dropdown>
+                    </div>
+
                 </header>
 
                 <Carousel autoplay>

@@ -24,9 +24,9 @@ class Photo extends Component {
                     <div className="line"></div>
                     <div className="pic" onClick={this.goto} >
                         <img src="http://img.saihuitong.com/5636/albumimg/3847172/16777152b07.jpg-cw400h400" alt="" />
-                        <div className="text">
-                            <p>相册</p>
-                            <p>19张相片</p>
+                        <div className="text_photo">
+                            <p className="xiangce_photo">相册</p>
+                            <p className="xiangce_photo2">19张相片</p>
                         </div>
                     </div>
                     <div className="none">

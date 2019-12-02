@@ -1,0 +1,186 @@
+@charset "utf-8";
+@function vw($px) {
+@return ($px / 750) * 100vw;
+}
+
+body {
+
+color: #666;
+
+height: 100%;
+.Box{
+    background: url(../img/blur_bg.jpg);
+    min-height: vw(1334);
+}
+    }
+   
+        header{
+            position: relative;
+            height: vw(98);
+         
+            margin: 0 0 vw(60);
+            .box{
+                width: vw(750);
+                height: vw(98);
+                display: flex;
+                justify-content:space-between;
+                align-items: center;
+                padding: 0  vw(18);
+                
+ 
+                .anticon-left{
+                    
+                    color: #fff;
+                    font-size: 18px;
+               
+                    
+                }
+                .text{
+                    font-weight: vw(400);
+                     font-size: 18px;
+                    color: #fff;
+                   
+                 }
+                .p{
+                    width: vw(100);
+                    height: vw(54);
+                    padding: vw(0);
+                    font-weight: vw(400);
+                    font-size: 16px;
+                    line-height: vw(40);
+                    text-align: center;
+                    border: vw(2) solid rgba(255,255,255,.47);
+                    color: #fff;
+                }
+               
+            }
+            
+             
+           
+        }
+
+        
+       
+        .ant-form{
+            width:vw(750);
+            height: vw(918);
+            padding:0 vw(40) ;
+            justify-content:center;
+            align-items: center;
+            .ant-row{
+              
+                margin-top: vw(-20);
+                svg{
+                    float: left;
+                    width: vw(30);
+                    height: vw(26);
+                    color: rgba(255,255,255,.6);
+            
+                }
+                
+                .ant-input{
+                    display: block;
+                    
+                    // padding: 24px 17px 0px 70px;
+                    // width: wv(620);
+                     height: vw(86);
+                    background: rgba(255,255,255,.3);
+                    color: rgba(255,255,255,.9);
+                    float: left;
+                    
+                }
+            }
+             #pp{
+                    width: vw(670);
+                    height: vw(50);
+                }
+                #cc{
+                    width: vw(670);
+                    height: vw(50);
+                }
+                  
+            
+            .login-form-button{
+                background-color: #02a578;
+                border: vw(2) solid #02a578;
+                width: vw(670);
+                height: vw(86);
+            }
+            .form-line{
+                width: vw(632);
+                height: wv(62);
+                margin: vw(16) vw(20) vw(60);
+                margin-top: vw(30);
+               
+                
+                
+                .phone-login{
+                    font-size:14px;
+                    color: #fff;
+                    float: left;
+                }
+                .reset-link{
+                    font-size:14px;
+                    color: #fff;
+                    float: right;
+                }
+            }
+            
+            .third-party{
+                width: vw(670);
+                height: vw(290);
+              
+                margin-top: vw(130);
+                .three{
+                    width: vw(670);
+                    font-size: 16px;
+                    height: vw(96);
+                    text-align: center;
+                    border-bottom: 1px solid #fff;
+                    color: #fff;
+                }
+                ul{
+                    width: vw(670);
+                    height: vw(194);
+                    margin-top: vw(30);
+                    display: flex;
+                 
+                    justify-content:center;
+                    align-items: center;
+                  
+
+                    li{   
+                       
+                        padding: vw(50);
+                                       
+                            svg{
+                                width: vw(100);
+                                height: vw(100);
+                                color: rgba(255,255,255,.6);
+                            }
+                            .QQ,.wb{
+                                width: vw(100);
+                               text-align: center;
+
+                                color: rgba(255,255,255,.6);
+                                font-size: 14px;
+                            }
+                    }
+                }
+                
+                
+            }
+            .normal_login_username{
+                background:rgba(255,255,255,.3);
+                color:rgba(255,255,255,.6);
+            } 
+            .login-form-button{
+                font-size: 20px;
+            } 
+        }
+        .ant-row{
+            
+            z-index:9999
+        }
+        
+       
