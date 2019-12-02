@@ -22,6 +22,10 @@ class Mine extends Component {
     this.props.history.push(`/tongzhi/`)
   }
 
+  gotohome=()=>{
+    this.props.history.push(`/home/`)
+  }
+  
 
   render() {
 
