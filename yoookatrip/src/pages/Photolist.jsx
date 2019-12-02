@@ -11,17 +11,15 @@ class Photolist extends Component {
     goto = () => {
         this.props.history.push(`/photo/`);
     }
-        go=()=>{
-        this.props.history.push(`/Photoxiangqing`)
+    go = (id) => {
+        this.props.history.push(`/Photoxiangqing/${id}`)
     }
     async componentDidMount() {
         let { data: { data } } = await my.get('database/photo');
 
-        let a = data[0].listphoto
 
-        console.log(a);
         this.setState({
-            list: a
+            list: data
         })
 
 
@@ -43,7 +41,7 @@ class Photolist extends Component {
                 <ul className="photo_new">
 
                     {list.map(item => {
-                        return <li><img key={item.id} src={item.url}  onClick={this.go}/></li>
+                        return <li key={item.id} onClick={this.go.bind(this, item._id)} ><img src={item.url} /></li>
                     }
                     )}
 

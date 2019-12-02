@@ -101,6 +101,7 @@ async function update(colName, query, data) {
  */
 async function find(colName, query = {}, options = {}) {
     // fields：用于过滤某些字段
+    
     let {
         fields,
         skip,
@@ -152,8 +153,8 @@ async function find(colName, query = {}, options = {}) {
     }
 
 
+    
     result = result.toArray()
-
     //在操作完成后，需要关闭数据库连接，释放资源占用
     client.close();
     //return 结果出去

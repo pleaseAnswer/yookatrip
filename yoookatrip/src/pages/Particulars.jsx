@@ -1,25 +1,25 @@
-import React,{Component} from 'react';
+import React, { Component } from 'react';
 import moment from 'moment';
 import my from '../api/my';
-import {Icon,InputNumber} from 'antd';
+import { Icon, InputNumber } from 'antd';
 import '../css/Particulars.scss';
 
-class Particulars extends Component{
+class Particulars extends Component {
     state = {
-        imgdata:'',
-        imgs:[],
-        num:1
+        imgdata: '',
+        imgs: [],
+        num: 1
     }
     getData = async () => {
         let id = this.props.match.params.id;
-        let {data:{data}} = await my.get(`/database/activity/${id}`);
+        let { data: { data } } = await my.get(`/database/activity/${id}`);
         let imgdata = data[0];
         this.setState({
             imgdata
         })
     }
     getImg = async () => {
-        let {data:{data}} = await my.get('/database/xiangqing');
+        let { data: { data } } = await my.get('/database/xiangqing');
         let imgs = data[0].img;
         this.setState({
             imgs
@@ -33,30 +33,33 @@ class Particulars extends Component{
             num
         })
     }
-    changWybm = () =>{
+    changWybm = () => {
         this.wybm.classList.remove('hidden');
         this.wybmfooter.classList.remove('hidden');
         this.owrap.classList.add('zezhao');
     }
-    componentDidMount(){
+    componentDidMount() {
         this.getData();
         this.getImg();
     }
-    render(){
-        let {imgdata,imgs,num} = this.state;
+    goto2 = (path) => {
+        this.props.history.push(path)
+    }
+    render() {
+        let { imgdata, imgs, num } = this.state;
         return (
             <div>
-                <header className="part-uiNavbar">
-                    <div className="icon1" onClick={this.goback}><Icon type="left" /></div>
-                    <p className="part-p">{imgdata?imgdata.title:''}</p>
+                <header className="part-uiNavbar">
+                    <div className="icon1" onClick={this.goback}><Icon type="left" /></div>
+                    <p className="part-p">{imgdata ? imgdata.title : ''}</p>
                     <div>
-                        <div className="icon2"><Icon type="shopping-cart" /></div>
-                        <div className="icon3"><Icon type="bars" /></div>
+                        <div className="icon2"><Icon type="shopping-cart" /></div>
+                        <div className="icon3"><Icon type="bars" /></div>
                     </div>
                 </header>
                 <div className="part-main">
                     <figure>
-                        <img src={imgdata?imgdata.coverPicUrl:''} alt="" className="data-img"/>
+                        <img src={imgdata ? imgdata.coverPicUrl : ''} alt="" className="data-img" />
                         <figcaption>
                             <p className="title">{imgdata.title}</p>
                             <p className="others">
@@ -91,14 +94,14 @@ class Particulars extends Component{
                     </div>
                     <div className="detail">
                         <p className="text">详细信息</p>
-                        {imgs.map(item=>{
-                            return <img src={item} alt="" key={item} className="detail-img"/>
+                        {imgs.map(item => {
+                            return <img src={item} alt="" key={item} className="detail-img" />
                         })}
                     </div>
                 </div>
-                <div className="part-wybm hidden" ref={ele=>this.wybm=ele}>
+                <div className="part-wybm hidden" ref={ele => this.wybm = ele}>
                     <figure className="wybm-mainmsg">
-                        <img src={imgdata?imgdata.coverPicUrl:''} alt="" className="wybm-img"/>
+                        <img src={imgdata ? imgdata.coverPicUrl : ''} alt="" className="wybm-img" />
                         <figcaption className="wybm-text">
                             <h5 className="wybm-title">{imgdata.title}</h5>
                             <p className="wybm-yuwei">余位：{imgdata.yuwei}</p>
@@ -111,7 +114,7 @@ class Particulars extends Component{
                                 ￥{imgdata.priceMin}/人
                             </i>
                             <div className="wybm-button">
-                                <InputNumber size="large" min={1} max={100000} defaultValue={1} onChange={this.changNum}/>
+                                <InputNumber size="large" min={1} max={100000} defaultValue={1} onChange={this.changNum} />
                             </div>
                         </div>
                     </div>
@@ -123,24 +126,24 @@ class Particulars extends Component{
                     </p>
                     <p className="button" onClick={this.changWybm}>我要报名</p>
                 </div>
-                <div className="hidden" ref={ele =>this.wybmfooter=ele}>
+                <div className="hidden" ref={ele => this.wybmfooter = ele}>
                     <div className="part-wybm-footer">
                         <p className="wybm">
                             {num}人
                         </p>
                         <div className="wybm-button-wrap">
                             <div className="wybm-button">
-                                <p>预付定金</p>
-                                <p>￥2000</p>
+                                <p onClick={this.goto2.bind(this, '/cart')}>预付定金</p>
+                                <p>￥{2000 * num}</p>
                             </div>
                             <div className="wybm-button wybm-button-2">
-                                <p>全额付款</p>
-                                <p>￥{imgdata.priceMin}</p>
+                                <p onClick={this.goto2.bind(this, '/cart')}>全额付款</p>
+                                <p>￥{imgdata.priceMin * num}</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div ref={ele => this.owrap=ele}></div>
+                <div ref={ele => this.owrap = ele}></div>
             </div>
         )
     }
