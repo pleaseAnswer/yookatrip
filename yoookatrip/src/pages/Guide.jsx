@@ -11,10 +11,10 @@ class Guide extends Component {
     }
     async componentDidMount() {
         let { id } = this.props.match.params;
-
+ 
         let { data: { data } } = await my.get(`/database/guide/${id}`);
         let data3 = data[0]
-
+       
         this.setState({
             data3: data3
         })
