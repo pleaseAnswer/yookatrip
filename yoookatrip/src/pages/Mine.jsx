@@ -21,6 +21,9 @@ class Mine extends Component{
   tongzhi=()=>{
     this.props.history.push(`/tongzhi/`)
   }
+  gotohome=()=>{
+    this.props.history.push(`/home/`)
+  }
   
 
     render(){
@@ -28,7 +31,7 @@ class Mine extends Component{
             <div className="box-mine">
                <header>
                  <div className="boxmine">
-                   <Icon type="left" />
+                   <Icon type="left"  onClick={this.gotohome}/>
                    <Icon type="unordered-list" />
                    <Icon type="shopping-cart" />
                    </div>

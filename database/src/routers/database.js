@@ -43,6 +43,7 @@ Router.get('/activity', async (req, res) => {
         data: result
     }))
 })
+
 //查询数据库
 Router.get('/activity/:id', async (req, res) => {
     //查询数据库
@@ -54,6 +55,20 @@ Router.get('/activity/:id', async (req, res) => {
         data: result
     }))
 })
+
+
+//查询数据库
+Router.get('/userList', async (req, res) => {
+    //查询数据库
+    let result = await find('userList'); //得到一个promise对象
+    
+    res.send(formatData({
+        data: result
+    }))
+})
+
+
+
 
 Router.get('/xiangqing', async (req, res) => {
     //查询数据库
