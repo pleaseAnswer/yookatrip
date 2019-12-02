@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../css/guide.css';
-import { Icon, Steps } from 'antd';
+import { Icon } from 'antd';
 import { my } from '../api';
 class Guide extends Component {
     state = {
