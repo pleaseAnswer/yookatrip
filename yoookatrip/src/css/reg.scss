@@ -1,0 +1,120 @@
+@charset "utf-8";
+@function vw($px) {
+@return ($px / 750) * 100vw;
+}
+html{
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+
+    color: #666;
+    
+    height: 100%;
+    overflow: hidden;
+}
+.box-reg{
+    background: url(../img/blur_bg.jpg);
+    min-height: vw(1334);
+
+    header{
+        position: relative;
+        height: vw(98);
+     
+        margin: 0 0 vw(60);
+        .box{
+            width: vw(750);
+            height: vw(98);
+            display: flex;
+            justify-content:space-between;
+            align-items: center;
+            padding: 0  vw(18);
+            
+
+            .anticon-left{
+                
+                color: #fff;
+                font-size: 18px;
+           
+                
+            }
+            .text{
+                font-weight: vw(400);
+                 font-size: 18px;
+                color: #fff;
+               
+             }
+            .p{
+                width: vw(160);
+                height: vw(54);
+                padding: vw(0);
+                font-weight: vw(400);
+                font-size: 16px;
+                line-height: vw(50);
+                text-align: center;
+                border: vw(2) solid rgba(255,255,255,.47);
+                color: #fff;
+            }
+           
+        }
+        
+         
+       
+    }
+
+    .ant-form{
+        width:vw(750);
+        height: vw(918);
+        padding:0 vw(40) ;
+        justify-content:center;
+        align-items: center;
+        .ant-row {
+            // width: vw(670);
+            // height: vw(86);
+               left: 0;
+            svg{
+                float: left;
+                width: vw(30);
+                height: vw(26);
+                color:#ccc;
+        
+            }
+            .ant-input{
+               
+                display: block;
+                width: wv(620);
+                height: vw(86);
+                background: rgba(255,255,255,.3);
+                color: rgba(255,255,255,.9);
+                float: left;
+                
+            }
+        }
+    
+       
+        
+        .login-form-button{
+            background-color: #02a578;
+            border: vw(2) solid #02a578;
+            width: vw(670);
+            height: vw(86);
+            font-size: 22px;
+        }
+    }
+    .active{
+        display: none;
+    }
+    #cc{
+       
+        width: vw(340);
+        height: vw(50);
+        margin-top: vw(80);
+        color: red;
+    }
+    .block{
+        display: block;
+    }
+   
+   
+}

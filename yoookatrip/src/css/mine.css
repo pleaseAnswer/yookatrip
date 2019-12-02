@@ -1,0 +1,161 @@
+body {
+  color: #666;
+  height: 100%;
+}
+
+.box-mine header {
+  position: relative;
+  height: 13.06667vw;
+  margin: 0 0 8vw;
+}
+
+.box-mine header .boxmine {
+  width: 100vw;
+  height: 13.06667vw;
+  padding: 0 2.13333vw;
+}
+
+.box-mine header .boxmine .anticon-left, .box-mine header .boxmine .anticon-unordered-list, .box-mine header .boxmine .anticon-shopping-cart {
+  margin-top: 2.66667vw;
+  color: #FFF;
+  font-size: 24px;
+}
+
+.box-mine header .boxmine .anticon-left {
+  float: left;
+}
+
+.box-mine header .boxmine .anticon-unordered-list, .box-mine header .boxmine .anticon-shopping-cart {
+  float: right;
+}
+
+.box-mine header .boxmine .anticon-shopping-cart {
+  margin-right: 5.33333vw;
+}
+
+.box-mine .main {
+  margin-top: -20.8vw;
+  width: 100vw;
+  height: 58.66667vw;
+  background: url(../img/avatar_bg.jpg) no-repeat;
+}
+
+.box-mine .main .avatar-wrap {
+  z-index: 999;
+  margin: 0 auto;
+  box-sizing: border-box;
+  transform: translateY(65px);
+  width: 20vw;
+  height: 20vw;
+  border-radius: 50%;
+}
+
+.box-mine .main .avatar-wrap .pic {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: url(../img/tou.jpg) no-repeat;
+  background-size: 20vw 20vw;
+}
+
+.box-mine .main .avatar-wrap .username {
+  margin-top: 3.2vw;
+  z-index: 2;
+  line-height: 5.86667vw;
+  color: #fff;
+}
+
+.box-mine .main .avatar-wrap .set {
+  text-align: center;
+  position: absolute;
+  z-index: 10;
+  right: -36.66667vw;
+  bottom: -18vw;
+  width: 13.33333vw;
+  height: 5.33333vw;
+  line-height: 5.33333vw;
+  font-size: 13px;
+  border-radius: 2.66667vw;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.box-mine .main .nav-wrap {
+  margin-top: 41.33333vw;
+  border-top: 2px solid #e5e5e5;
+}
+
+.box-mine .main .nav-wrap .icon-angleright {
+  position: relative;
+  height: 13.06667vw;
+  border-bottom: 1px solid #e5e5e5;
+  background-color: #FFF;
+}
+
+.box-mine .main .nav-wrap .icon-angleright a {
+  width: 100vw;
+  height: 13.06667vw;
+  display: block;
+  padding-right: 2.66667vw;
+}
+
+.box-mine .main .nav-wrap .icon-angleright a p {
+  float: left;
+  margin-left: 2vw;
+  line-height: 13.06667vw;
+  font-size: 16px;
+  color: #505050;
+}
+
+.box-mine .main .nav-wrap .icon-angleright a .imgicon {
+  margin-top: 3.33333vw;
+  display: block;
+  background: url(../img/sprite.png) no-repeat;
+  margin-left: 2vw;
+  width: 5.86667vw;
+  height: 5.86667vw;
+  float: left;
+}
+
+.box-mine .main .nav-wrap .icon-angleright a .one {
+  background-size: 160px 476px;
+  background-position: -1px 0;
+}
+
+.box-mine .main .nav-wrap .icon-angleright a .two {
+  background-size: 160px 476px;
+  background-position: -1px -66px;
+}
+
+.box-mine .main .nav-wrap .icon-angleright a .three {
+  background-size: 160px 476px;
+  background-position: -1px -134px;
+}
+
+.box-mine .main .nav-wrap .icon-angleright a .four {
+  background-size: 160px 476px;
+  background-position: -1px -198px;
+}
+
+.box-mine .main .nav-wrap .icon-angleright a .fire {
+  background-size: 160px 476px;
+  background-position: -1px -246px;
+}
+
+.box-mine .main .nav-wrap .icon-angleright a .anticon-right {
+  line-height: 13.06667vw;
+  color: #505050;
+  float: right;
+}
+
+.box-mine .main .tuichu {
+  width: 94.66667vw;
+  height: 10.66667vw;
+  background-color: #02a578;
+  font-size: 16px;
+  color: #fff;
+  text-align: center;
+  line-height: 10.66667vw;
+  margin-top: 5.33333vw;
+  margin-left: 2.4vw;
+}
