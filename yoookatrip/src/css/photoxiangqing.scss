@@ -67,27 +67,27 @@ body {
             top: vw(-10);
             left: vw(25);
         }
-        .wen{
+        .wen_photo{
             width: vw(500);
             position: relative;
             color: #666;
             font-size: vw(12);
-            top:vw(-62);
+            top:vw(-50);
             left: vw(80);
         }
-        .eyeleft{
+        .eyeleft_photo{
             margin-right: vw(20);
             position: relative;
-            top:vw(-130);
+            top:vw(-94);
             left:vw(580);
         }
-        .eyeright{
+        .eyeright_photo{
             margin-right: vw(20);
-            position: relative;
-            top:vw(-130);
-            left:vw(590);
+            position: absolute;
+            top:vw(820);
+            left:vw(660);
         }
-        .eyeleft,.eyeright{
+        .eyeleft_photo,.eyeright_photo{
             width: vw(10);
             height: vw(10);
             font-size: vw(12);
@@ -135,9 +135,9 @@ body {
             left: vw(500);
             color: #8c8c8c;
         }
-        .wen{
+        .wenh{
             position: absolute;
-            top: vw(1040);
+            top: vw(1050);
             left: vw(90);
         }  
         .text02{
