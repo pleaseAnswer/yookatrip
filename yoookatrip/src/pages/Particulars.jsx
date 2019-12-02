@@ -131,11 +131,11 @@ class Particulars extends Component{
                         <div className="wybm-button-wrap">
                             <div className="wybm-button">
                                 <p>预付定金</p>
-                                <p>￥2000</p>
+                                <p>￥{2000*num}</p>
                             </div>
                             <div className="wybm-button wybm-button-2">
                                 <p>全额付款</p>
-                                <p>￥{imgdata.priceMin}</p>
+                                <p>￥{imgdata.priceMin*num}</p>
                             </div>
                         </div>
                     </div>

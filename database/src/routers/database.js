@@ -60,6 +60,14 @@ Router.get('/xiangqing', async (req, res) => {
         data: result
     }))
 })
+
+Router.get('/cart', async (req, res) => {
+    //查询数据库
+    let result = await find('xiangqing'); //得到一个promise对象
+    res.send(formatData({
+        data: result
+    }))
+})
 //查询单个用户信息
 Router.get('/:id', async (req, res) => {
     let {
