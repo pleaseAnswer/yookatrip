@@ -17,6 +17,12 @@ import Particulars from './pages/Particulars.jsx'
 import Cart from './pages/Cart.jsx'
 import Guide from './pages/Guide.jsx'
 import Trip from './pages/Trip.jsx'
+import Active from './pages/Active.jsx'
+import Myjifen from './pages/Myjifen.jsx'
+import Xiaox from './pages/Xiaox.jsx'
+import Myphoto from './pages/Myphoto.jsx'
+import Tongzhi from './pages/Tongzhi.jsx'
+
 
 
 class App extends React.Component {
@@ -34,6 +40,7 @@ class App extends React.Component {
             icon: 'flag',
             text: '优客活动'
         },
+        
         {
             name: 'photo ',
             path: '/photo',
@@ -70,8 +77,14 @@ class App extends React.Component {
                     <Route path="/cart" component={Cart} />
                     <Route path="/guide/:id" component={Guide} />
                     <Route path="/trip" component={Trip}/>
+                    <Route path="/myphoto" component={Myphoto}/>
+                    <Route path="/active" component={Active}/>
+                    <Route path="/myjifen" component={Myjifen}/>
+                    <Route path="/xiaox" component={Xiaox}/>
+                    <Route path="/tongzhi" component={Tongzhi}/>
                     <Route path="/notfound" render={() => <div>404页面</div>} />
                     <Redirect from="/" to="/home" exact />
+
                     <Redirect to="/notfound" />
                 </Switch>
                 <ul className="footer-tabs">
