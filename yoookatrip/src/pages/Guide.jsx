@@ -22,7 +22,7 @@ class Guide extends Component {
     }
     render() {
         let { data3 } = this.state;
-
+ let {data} =this.state;
 
         return (
             <div>
