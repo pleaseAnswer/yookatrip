@@ -1,5 +1,6 @@
 import React,{Component}  from 'react';
 import '../css/login.scss';
+import { my } from '../api'
 
 
 import  {Icon,Form, Input, Button, } from 'antd'
@@ -13,9 +14,24 @@ class Login extends  Component{
 
     handleSubmit = e => {
         e.preventDefault();
-        this.props.form.validateFields((err, values) => {
+
+        this.props.form.validateFields(async(err, values) => {
+          let { email, password } = values
+          console.log(email);
+          
           if (!err) {
-            
+            let { data } = await my.get("/database/login", {
+              email,
+              password
+          })
+
+          console.log(data);
+          
+          if (data.status == 1) {
+              this.props.history.push(`/mine/`);
+          } else {
+           alert('注册失败')
+        }
           }
         });
       };
@@ -61,17 +77,48 @@ class Login extends  Component{
             <Form onSubmit={this.handleSubmit}  className="login-form">
 
             <Form.Item>
-                {getFieldDecorator('username', {
-                    rules: [{ required: true, message: '请输入你的用户名' }
-                      ],
-                })(
-                    <Input
-                    prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}
-                    placeholder="手机 / 邮箱"
-                    
-                    />,
-                )}
-            </Form.Item>
+                        {getFieldDecorator('email', {
+                            rules: [
+                                {
+                                    type: 'email',
+                                    message: '请输入正确的手机或邮箱',
+                                },
+                                {
+                                    required: true,
+                                    message: '请输入你的用户名',
+                                },
+
+                            ],
+                        })(
+                            <Input
+                                prefix={<Icon type="user" />}
+                                placeholder="手机 / 邮箱"
+                         
+                            />
+                        )}
+                    </Form.Item>
+
+            {/* <Form.Item>
+                {getFieldDecorator('email', {
+                            rules: [
+                                {
+                                    type: 'email',
+                                    message: '请输入正确的手机或邮箱',
+                                },
+                                {
+                                    required: true,
+                                    message: '请输入你的用户名',
+                                },
+
+                            ],
+                        })(
+                            <Input
+                                prefix={<Icon type="user" />}
+                                placeholder="手机 / 邮箱"
+                         
+                            />
+                        )}
+            </Form.Item> */}
            
 
             <Form.Item>
