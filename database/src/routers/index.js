@@ -16,7 +16,7 @@ Router.use((req, res, next) => {
     // res.header('Access-Control-Allow-Origin','*');允许所有端口跨域
 
     let currentOrigin = req.get('Origin'); //获取前端接口
-    let allowOrigin = ['http://localhost:8080', 'http://localhost:8081', 'http://localhost:3000'] //开发跨域访问端口,可以任意增加端口
+    let allowOrigin = ['http://localhost:8080', 'http://localhost:8081', 'http://localhost:3000', , 'http://localhost:3001'] //开发跨域访问端口,可以任意增加端口
     if (allowOrigin.includes(currentOrigin)) { //判断前端端口是否在里面，有就可以跨域
         res.set({
             'Access-Control-Allow-Origin': currentOrigin,
