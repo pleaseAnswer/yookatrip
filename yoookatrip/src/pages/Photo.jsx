@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import "../css/photo.scss";
-import { Icon, Divider, Carousel, Menu, Dropdown } from 'antd';
+import { Icon, Divider, Menu, Dropdown } from 'antd';
 
 
 class Photo extends Component {

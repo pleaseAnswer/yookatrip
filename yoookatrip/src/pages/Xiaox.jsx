@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import '../css/myphoto.scss';
 
-import { Icon, Form, Input, Button } from 'antd';
+import { Icon} from 'antd';
 
 class active extends Component{
     goto=()=>{

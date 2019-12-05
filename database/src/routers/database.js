@@ -3,8 +3,8 @@ const express = require('express');
 const Router = express.Router();
 //引入数据库操作方式
 const {
-    find,
-    create
+    find,create,remove,update
+
 } = require('../db/mongodb')
 const {
     formatData
@@ -57,19 +57,31 @@ Router.get('/activity/:id', async (req, res) => {
     }))
 })
 
-
-//查询数据库
-// Router.get('/userList', async (req, res) => {
-//     //查询数据库
-//     let result = await find('userList'); //得到一个promise对象
-
-//     res.send(formatData({
-//         data: result
-//     }))
-// })
-
-
-
+Router.post('/cart', async (req, res) => {
+    let {
+        id,
+        title,
+        coverPicUrl,
+        startTime,
+        endTime,
+        priceMin,
+        num
+    } = req.body;
+    await create('cart',{
+        id,
+        title,
+        coverPicUrl,
+        startTime,
+        endTime,
+        priceMin,
+        num
+    }); 
+    if(result.insertedCount>0){
+        res.send(formatData());
+    }else{
+        res.send(formatData({status:0}));
+    }
+})
 
 Router.get('/xiangqing', async (req, res) => {
     //查询数据库
@@ -80,12 +92,45 @@ Router.get('/xiangqing', async (req, res) => {
 })
 
 Router.get('/cart', async (req, res) => {
-    //查询数据库
-    let result = await find('xiangqing'); //得到一个promise对象
+    let result = await find('cart'); //得到一个promise对象
+    
     res.send(formatData({
         data: result
     }))
 })
+
+Router.patch('/cart/:id', async (req, res) => {
+    let {id} = req.params;
+    let {num} = req.body;
+    let result = await update('cart',{
+        id
+    },{
+        num
+    }); 
+    if (result.modifiedCount > 0) {
+        res.send(formatData())
+    } else {
+        res.send(formatData({
+            status: 0
+        }))
+    }
+})
+Router.delete('/cart/:id', async (req, res) => {
+    let {id} = req.params;
+    
+    let result = await remove('cart',{
+        _id:id
+    }); 
+    if (result.modifiedCount > 0) {
+        res.send(formatData())
+    } else {
+        res.send(formatData({
+            status: 0
+        }))
+    }
+})
+
+
 //查询单个用户信息
 Router.get('/guide/:id', async (req, res) => {
     let {

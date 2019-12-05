@@ -1,4 +1,5 @@
-import {ADD_TO_CART,REMOVE_FROM_CART,CLEAR_CART,CHANGE_GOODS_QTY} from '../action/cart'
+import {} from '../saga';
+import {REMOVE_FROM_CART,CHANGE_GOODS_QTY,ADD_TO_CART,CLEAR_CART} from '../action/cart';
 
 // State：初始化数据
 let initialState = {
@@ -41,7 +42,7 @@ const reducer = function(state=initialState,{type,payload}){
         case REMOVE_FROM_CART:
             return {
                 ...state,
-                goodslist:state.goodslist.filter(item=>item.goods_id!=payload.goods_id)
+                goodslist:state.goodslist.filter(item=>item.goods_id!== payload.goods_id)
             }
 
         // 修改商品数量
@@ -50,7 +51,7 @@ const reducer = function(state=initialState,{type,payload}){
         return {
             ...state,
             goodslist:state.goodslist.map(item=>{
-                if(item.goods_id == payload.goods_id){
+                if(item.goods_id === payload.goods_id){
                     item.goods_qty = payload.goods_qty;
                 }
                 return item;

@@ -2,13 +2,20 @@ import React, { Component } from 'react';
 import moment from 'moment';
 import my from '../api/my';
 import { Icon, InputNumber } from 'antd';
+import {connect} from 'react-redux'
+import CartAction from '../store/action/cart'
 import '../css/Particulars.scss';
 
+
+const mapStateToProps = state=>({
+    goodslist:state.cart.goodslist
+})
+@connect(mapStateToProps)
 class Particulars extends Component {
     state = {
         imgdata: '',
         imgs: [],
-        num: 1
+        num:1
     }
     getData = async () => {
         let id = this.props.match.params.id;
@@ -28,11 +35,6 @@ class Particulars extends Component {
     goback = () => {
         this.props.history.goBack();
     }
-    changNum = (num) => {
-        this.setState({
-            num
-        })
-    }
     changWybm = () => {
         this.wybm.classList.remove('hidden');
         this.wybmfooter.classList.remove('hidden');
@@ -42,9 +44,27 @@ class Particulars extends Component {
         this.getData();
         this.getImg();
     }
-    goto2 = (path) => {
-        this.props.history.push(path)
+    onChange = (value) => {
+        this.setState({
+            num:value
+        })
     }
+    goto2 = async (path) => {
+        this.props.history.push(path);
+        let {_id:id,title,coverPicUrl,startTime,endTime,priceMin} = this.state.imgdata;
+        let num = this.state.num;
+        let {data:{data}} = await my.get('/database/cart');
+        
+        let currentGoods = data.filter(item => item.id===id)[0];
+        if(currentGoods){
+            this.props.dispatch(CartAction.changeQty(id,currentGoods.num+num));
+            await my.patch(`/database/cart/${id}`,{num:currentGoods.num+num})
+        }else{
+            await my.post('/database/cart',{id,title,coverPicUrl,startTime,endTime,priceMin,num});
+        }
+        
+    }
+    
     render() {
         let { imgdata, imgs, num } = this.state;
         return (
@@ -114,7 +134,7 @@ class Particulars extends Component {
                                 ￥{imgdata.priceMin}/人
                             </i>
                             <div className="wybm-button">
-                                <InputNumber size="large" min={1} max={100000} defaultValue={1} onChange={this.changNum} />
+                                <InputNumber size="large" min={1} max={100000} defaultValue={1} onChange={this.onChange}/>
                             </div>
                         </div>
                     </div>

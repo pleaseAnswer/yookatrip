@@ -7,7 +7,7 @@ import {withRouter} from 'react-router-dom'
 import { connect } from 'react-redux'
 import UserAction, { LOGIN } from '../store/action/common'
 
-import { Icon, Form, Input, Button, } from 'antd'
+import  {Icon,Form, Input, Button} from 'antd'
 
 
 

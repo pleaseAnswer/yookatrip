@@ -34,8 +34,10 @@ async function create(colName, data) {
         db
     } = await connect();
     //获取集合
+    
     let collection = db.collection(colName);
-    // //判断传入的data是否为数组
+    //判断传入的data是否为数组
+
     // if (!Array.isArray(data)) {
     //     data = [data]
     // }
@@ -52,7 +54,30 @@ async function create(colName, data) {
  * @param {Object} query        查询条件
  */
 
+
 async function remove(colName, query) {
+    
+    const {
+        db,
+        client
+    } = await connect();
+    
+    let collection = db.collection(colName);
+    
+    //处理id查询
+    // {_id:'xxxxx'} -> {_id:ObjectId('xxxxx')}
+    if (query._id && typeof query._id == 'string') {
+        query._id = ObjectId(query._id);
+    }
+
+    let result = await collection.deleteMany(query);
+    
+    client.close();
+
+    return result;
+}
+
+async function clear(colName) {
     const {
         client,
         db
@@ -70,6 +95,7 @@ async function remove(colName, query) {
 
     return result
 }
+
 /**
  * 更新
  * @param {String} colName      集合名称
@@ -84,10 +110,7 @@ async function update(colName, query, data) {
 
     let collection = db.collection(colName);
 
-    if (query._id && typeof query._id === 'string') {
-        query._id = ObjectId(query._id)
-    }
-
+    
     let result = await collection.updateMany(query, {
         $set: data
     });

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import '../css/mm.scss';
 
-import { Icon, Form, Input, Button } from 'antd';
+import { Icon } from 'antd';
 import pic from '../img/user_no_picture.png'
 class Myphoto extends Component{
     goto=()=>{
