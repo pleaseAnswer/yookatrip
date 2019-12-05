@@ -10,6 +10,7 @@ import UserAction, { LOGIN } from '../store/action/common'
 import  {Icon,Form, Input, Button, } from 'antd'
 
 
+
 const {login} =UserAction;
 //  映射属性（获取）
 const mapStateToProps = (state)=>{
@@ -76,17 +77,17 @@ class Login extends  Component{
         
         return (
             <div>
-                 <div style={{width:"100%",height:"100%",opacity:"0.3",background:"#000",
+                 <div style={{width:"100%",height:"100%",opacity:"0.3",
                position:"absolute",left:"0",right:"0",top:"0",bottom:"0"}}
                  className={this.state.view?"active":""}></div>
 
 
 
-            <div className="Box" style={{width:"500px",height:"500px" ,marginLeft:"320px", background:"#5ff7c9 ",zIndex:'9999' }}>
+            <div className="Box" style={{width:"500px",height:"500px" ,marginLeft:"320px", background:"#ffffff ",zIndex:'9999' }}>
                <header style={{marginTop:"100px",zIndex:'9999' }}>
                    <div className="box" style={{width:"500px",height:"100px" }} >
                 
-                   <span className="text" style={{marginLeft:"220px" ,fontSize:"40px",color:"#fff"}}>登录</span>
+                   <span className="text" style={{marginLeft:"220px" ,fontSize:"40px",color:"#000"}}>登录</span>
                  
                    </div>
                </header>
