@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import '../css/mine.scss'
 import { Icon } from 'antd'
-// import {connect} from '../utils/hoc'
-// @connect
+
 class Mine extends Component {
   photo = () => {
     this.props.history.push(`/myphoto/`)
   }
   goto = () => {
+    localStorage.removeItem("user")
     this.props.history.push(`/login/`)
   }
   active = () => {

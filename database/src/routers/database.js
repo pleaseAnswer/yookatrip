@@ -143,7 +143,7 @@ Router.get('/login', async (req, res) => {
         email,
         password
     } = req.query;
-    console.log(email);
+ 
     
 
     let data = await find("userList", {

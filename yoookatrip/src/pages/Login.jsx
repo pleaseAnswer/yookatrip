@@ -2,35 +2,56 @@ import React,{Component}  from 'react';
 import '../css/login.scss';
 import { my } from '../api'
 
+import '@babel/plugin-proposal-decorators'
+import {withRouter} from 'react-router-dom'
+import { connect } from 'react-redux'
+import UserAction, { LOGIN } from '../store/action/common'
 
 import  {Icon,Form, Input, Button, } from 'antd'
 
+
+const {login} =UserAction;
+//  映射属性（获取）
+const mapStateToProps = (state)=>{
+  let {user} = state.common;
+
+  let email=user.email;
+  return {
+      user,
+     email
+  }
+}
+
 class Login extends  Component{
+    state = {
+    }
 
     goto = ()=>{
         this.props.history.push(`/reg/`);
     }
     
 
+
     handleSubmit = e => {
         e.preventDefault();
 
         this.props.form.validateFields(async(err, values) => {
           let { email, password } = values
-          console.log(email);
-          
+
+    
           if (!err) {
             let { data } = await my.get("/database/login", {
               email,
               password
           })
-
-          console.log(data);
+          let user={email:'email',password:'password'};
+           localStorage.setItem('user',JSON.stringify(user));
+    
           
-          if (data.status == 1) {
+          if (data.status === 1) {
               this.props.history.push(`/mine/`);
           } else {
-           alert('注册失败')
+           alert('登录失败')
         }
           }
         });
@@ -62,9 +83,10 @@ class Login extends  Component{
  
     render(){   
         const { getFieldDecorator } = this.props.form;
+
+        
         
         return (
-            
             <div className="Box">
                <header>
                    <div className="box">
@@ -97,29 +119,6 @@ class Login extends  Component{
                             />
                         )}
                     </Form.Item>
-
-            {/* <Form.Item>
-                {getFieldDecorator('email', {
-                            rules: [
-                                {
-                                    type: 'email',
-                                    message: '请输入正确的手机或邮箱',
-                                },
-                                {
-                                    required: true,
-                                    message: '请输入你的用户名',
-                                },
-
-                            ],
-                        })(
-                            <Input
-                                prefix={<Icon type="user" />}
-                                placeholder="手机 / 邮箱"
-                         
-                            />
-                        )}
-            </Form.Item> */}
-           
 
             <Form.Item>
             {getFieldDecorator('password', {
@@ -170,6 +169,7 @@ class Login extends  Component{
 }
 
 const WrappedNormalLoginForm = Form.create({ name: 'normal_login' })(Login);
-
+Login = connect(mapStateToProps)(Login)
+Login = withRouter(Login)
   
 export default  WrappedNormalLoginForm;

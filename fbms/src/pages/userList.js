@@ -49,7 +49,7 @@ import { Table,   Button } from 'antd';
     };
   
     onSelectChange = selectedRowKeys => {
-      console.log('selectedRowKeys changed: ', selectedRowKeys);
+
       this.setState({ selectedRowKeys });
     };
   
@@ -64,7 +64,7 @@ import { Table,   Button } from 'antd';
         <div>
           <div style={{ marginBottom: 16 }}>
             <Button type="primary" onClick={this.start} disabled={!hasSelected} loading={loading}>
-              Reload
+              取消全选
             </Button>
             <span style={{ marginLeft: 8 }}>
               {hasSelected ? `Selected ${selectedRowKeys.length} items` : ''}
