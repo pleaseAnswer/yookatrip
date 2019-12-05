@@ -3,7 +3,8 @@ const express = require('express');
 const Router = express.Router();
 //引入数据库操作方式
 const {
-    find,create
+    find,
+    create
 } = require('../db/mongodb')
 const {
     formatData
@@ -114,7 +115,7 @@ Router.get('/photolist/:id', async (req, res) => {
 
 //注册
 Router.post('/reg', async (req, res) => {
-   //校验用户名
+    //校验用户名
 
 
     let {
@@ -143,8 +144,8 @@ Router.get('/login', async (req, res) => {
         email,
         password
     } = req.query;
-    console.log(email);
-    
+
+
 
     let data = await find("userList", {
         email,
@@ -157,7 +158,7 @@ Router.get('/login', async (req, res) => {
             status: 0
         }));
     }
-    // res.send(data)
+
 })
 
 
