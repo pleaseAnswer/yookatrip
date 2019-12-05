@@ -49,21 +49,21 @@
 
 ### 项目页面截图：
 * webAPP
-    ![home](https://github.com/gzh51910/Joyfully/blob/dev/project_img/Joyfully-home.png)
-    ![游客活动](https://github.com/gzh51910/Joyfully/blob/dev/project_img/Joyfully-fenlei.png)
-    ![相册](https://github.com/gzh51910/Joyfully/blob/dev/project_img/Joyfully-nation.png)
-    ![个人中心](https://github.com/gzh51910/Joyfully/blob/dev/project_img/Joyfully-mine.png)
-    ![注册](https://github.com/gzh51910/Joyfully/blob/dev/project_img/Joyfully-cart.png)
-    ![登录]
-    ![购物车]
+    ![home](https://github.com/gzh51910/yookatrip/blob/dev/project_img/yookatrip-home.png)
+    ![游客活动](https://github.com/gzh51910/yookatrip/blob/dev/project_img/active.png)
+    ![相册](https://github.com/gzh51910/yookatrip/blob/dev/project_img/photo.png)
+    ![个人中心](https://github.com/gzh51910/yookatrip/blob/dev/project_img/mine.png)
+    ![注册](https://github.com/gzh51910/yookatrip/blob/dev/project_img/reg.png)
+    ![登录](https://github.com/gzh51910/yookatrip/blob/dev/project_img/login.png)
+    ![购物车](https://github.com/gzh51910/yookatrip/blob/dev/project_img/cart.png)
 
 * 后台管理系统
-   ![管理员列表](https://github.com/gzh51910/Joyfully/blob/dev/project_img/FBMS-login.png)
-   ![用户列表](https://github.com/gzh51910/Joyfully/blob/dev/project_img/FBMS-mangelist.png)
-   ![订单列表](https://github.com/gzh51910/Joyfully/blob/dev/project_img/FBMS-userlist.png)
-   ![活动列表](https://github.com/gzh51910/Joyfully/blob/dev/project_img/FBMS-goodslist.png)
-   ![相册列表](https://github.com/gzh51910/Joyfully/blob/dev/project_img/FBMS-orderlist.png)
-    ![出行指南]
+   ![管理员列表](https://github.com/gzh51910/yookatrip/blob/dev/project_img/manage.png)
+   ![用户列表](https://github.com/gzh51910/yookatrip/blob/dev/project_img/list.png)
+   ![订单列表](https://github.com/gzh51910/yookatrip/blob/dev/project_img/dingdanlist.png)
+   ![活动列表](https://github.com/gzh51910/yookatrip/blob/dev/project_img/activelist.png)
+   ![相册列表](https://github.com/gzh51910/yookatrip/blob/dev/project_img/photolist.png)
+    ![出行指南](https://github.com/gzh51910/yookatrip/blob/dev/project_img/zhinan.png)
 ### 项目文件目录：
 ##### database文件
 >
