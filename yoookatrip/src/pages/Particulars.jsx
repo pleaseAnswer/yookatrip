@@ -54,10 +54,8 @@ class Particulars extends Component {
         let {_id:id,title,coverPicUrl,startTime,endTime,priceMin} = this.state.imgdata;
         let num = this.state.num;
         let {data:{data}} = await my.get('/database/cart');
-        // console.log(this.props);
         
         let currentGoods = data.filter(item => item.id===id)[0];
-        console.log(123,id,currentGoods);
         if(currentGoods){
             this.props.dispatch(CartAction.changeQty(id,currentGoods.num+num));
             await my.patch(`/database/cart/${id}`,{num:currentGoods.num+num})
