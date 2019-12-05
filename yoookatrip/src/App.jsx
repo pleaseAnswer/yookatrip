@@ -22,12 +22,25 @@ import Myjifen from './pages/Myjifen.jsx'
 import Xiaox from './pages/Xiaox.jsx'
 import Myphoto from './pages/Myphoto.jsx'
 import Tongzhi from './pages/Tongzhi.jsx'
+import {
+    connect
+  } from 'react-redux'
 
+  const mapStateToProps = (state) => {
+    let {
+      user
+    } = state.common;
 
-
+    let email = user.email;
+    return {
+      user,
+      email
+    }
+  }
 class App extends React.Component {
 
     state = {
+        currentPath:"",
         currentIndex: 0,
         menu: [{
             name: 'home',
@@ -55,13 +68,26 @@ class App extends React.Component {
         ]
     }
 
-    goto(path) {
-        this.props.history.push(path)
+    goto({ key: path }) {
+        let { history} = this.props;
+        this.setState({
+            currentPath: path
+        })
+        let name=this.props.history.location.pathname  
+        if (name === '/mine' && localStorage.getItem("user")===null) {
+                       path="/login"
+       }
+       history.push(path)
     }
 
-
+    componentDidMount() {  
+        this.setState({
+          currentPath: this.props.history.location.pathname ? this.props.history.location.pathname : '/home'
+        })
+        console.log(this.state.currentPath);
+        console.log(this.props.history.location);
+      }
     render() {
-
         return (
             <div className="App">
                 <Switch>
@@ -90,7 +116,7 @@ class App extends React.Component {
                 <ul className="footer-tabs">
                     {
                         this.state.menu.map(item => {
-                            return <li key={item.name} onClick={this.goto.bind(this, item.path)}
+                            return <li key={item.name} onClick={this.goto.bind(this)} selectedkeys={this.state.currentPath}
                             >
                                 <i> <NavLink
                                     to={item.path}
@@ -113,5 +139,6 @@ class App extends React.Component {
         )
     }
 }
+App = connect(mapStateToProps)(App)
 App = withRouter(App);
 export default App;

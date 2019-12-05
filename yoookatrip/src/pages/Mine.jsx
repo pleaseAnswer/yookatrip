@@ -7,6 +7,7 @@ class Mine extends Component {
     this.props.history.push(`/myphoto/`)
   }
   goto = () => {
+    localStorage.removeItem("user")
     this.props.history.push(`/login/`)
   }
   active = () => {
@@ -22,14 +23,16 @@ class Mine extends Component {
     this.props.history.push(`/tongzhi/`)
   }
 
-
+  gotohome=()=>{
+    this.props.history.push(`/home/`)
+  }
   render() {
 
     return (
       <div className="box-mine">
         <header>
           <div className="boxmine">
-            <Icon type="left" />
+            <Icon type="left" onClick={this.gotohome} />
             <Icon type="unordered-list" />
             <Icon type="shopping-cart" />
           </div>
@@ -38,7 +41,7 @@ class Mine extends Component {
         <div className="main">
           <div className="avatar-wrap">
             <div className="pic"></div>
-            <div className="username">csdsdscscscsc</div>
+            <div className="username">20910******com</div>
             <div className="set"><Icon type="setting" />设置</div>
           </div>
           <ul className="nav-wrap">
@@ -56,3 +59,5 @@ class Mine extends Component {
   }
 }
 export default Mine;
+
+

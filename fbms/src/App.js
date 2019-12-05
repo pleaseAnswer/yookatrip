@@ -18,7 +18,8 @@ const { Panel } = Collapse;
 
 class App extends React.Component {
   state = {
-    currentPath: '/login',
+    currentPath:'',
+   
     menu: [
       {
         name: 'manageList',
@@ -59,12 +60,18 @@ class App extends React.Component {
     ]
   }
   goto = path => {
-    console.log('path',path)
     let {history} = this.props;
     this.setState({
       currentPath: path
     })
-    history.push(path);
+    let name=this.props.history.location.pathname  
+    if (name === '/manageList' && localStorage.getItem("user")===null) {
+                   path="/login"
+   }
+   if ( localStorage.getItem("user")!=null){
+     history.push(path);
+   }
+    
   }
   render(){
     return (
@@ -100,7 +107,8 @@ class App extends React.Component {
             </Switch>
           </div>
         </div>
-        
+
+         
       </div>
     );
   }

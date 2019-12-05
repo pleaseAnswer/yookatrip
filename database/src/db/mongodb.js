@@ -37,6 +37,7 @@ async function create(colName, data) {
     
     let collection = db.collection(colName);
     //判断传入的data是否为数组
+
     // if (!Array.isArray(data)) {
     //     data = [data]
     // }
@@ -123,7 +124,7 @@ async function update(colName, query, data) {
  */
 async function find(colName, query = {}, options = {}) {
     // fields：用于过滤某些字段
-    
+
     let {
         fields,
         skip,
@@ -139,7 +140,7 @@ async function find(colName, query = {}, options = {}) {
     if (query._id && typeof query._id === 'string') {
         query._id = ObjectId(query._id)
     }
-    
+
     //在数据库查找
     let result = await collection.find(query, {
         fields
@@ -175,7 +176,7 @@ async function find(colName, query = {}, options = {}) {
     }
 
 
-    
+
     result = result.toArray()
     //在操作完成后，需要关闭数据库连接，释放资源占用
     client.close();

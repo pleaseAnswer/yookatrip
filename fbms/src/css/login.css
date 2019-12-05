@@ -1,0 +1,14 @@
+.active{
+    display:block;
+}
+#normal_login_email,#normal_login_password{
+    width: 500px;
+    height: 50px;
+}
+.ant-btn-primary {
+    background: #5ff7c9;
+  
+}
+svg{
+    color: #ccc;
+}

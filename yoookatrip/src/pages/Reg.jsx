@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import '../css/reg.scss';
 
 import { Icon, Form, Input, Button } from 'antd'
+import { my } from '../api'
 
 
 class Reg extends Component {
@@ -11,7 +12,7 @@ class Reg extends Component {
         autoCompleteResult: [],
         inpValue: '',
         text: '',
-        email:'',
+        email: '',
 
     }
 
@@ -29,15 +30,48 @@ class Reg extends Component {
 
     }
 
+    // 点击下一步
+    submitForm = (e) => {
+        e.stopPropagation()
+        if (this.state.inpValue * 1 === this.state.num) {
+            this.setState({
+                confirmDirty: true,
+            })
+        } else if (this.state.inpValue === '') {
+            this.setState({
+                text: '请输入字符',
+                inpValue: '',
+            })
+        } else {
+            this.setState({
+                text: '请输入正确的字符',
+                autoCompleteResult: [],
+                confirmDirty: false,
+                inpValue: '',
+            })
+
+        }
+    }
+
     handleSubmit = e => {
         e.preventDefault();
-        this.props.form.validateFields((err, values) => {
-          if (!err) {
-            console.log('Received values of form: ', values);
-          }
-        
+        this.props.form.validateFields(async (err, values) => {
+            let { email, password } = values
+
+            if (!err) {
+                
+                let { data } = await my.post("/database/reg", {
+                    email,
+                    password
+                })
+                if (data.status == 1) {
+                    this.props.history.push(`/login/`);
+                } else {
+                 alert('注册失败')
+              }
+            } 
         });
-       
+
     }
 
     change(e) {
@@ -46,53 +80,16 @@ class Reg extends Component {
 
         })
     }
-    // changeemail=(e)=>{
-    //     this.setState({
-    //        email: e.target.value
 
-    //     })
-    //     console.log(this.state.email);
-    // }
-
-    // 点击下一步
-    submitForm = () => {
-        
-        // this.setState({
-        //     email: this.props.form.getFieldValue('email')
-        // }) 
-        if(this.state.inpValue*1===this.state.num){
-        this.setState({ 
-            confirmDirty:true,
-        })
-        }else if(this.state.inpValue===''){
-            this.setState({ 
-                text:'请输入字符',
-                inpValue:'',
-            })
-        }else{
-            this.setState({
-                text:'请输入正确的字符',
-                autoCompleteResult:[],
-                confirmDirty:false,
-                inpValue:'',
-            })
-         
-
-        } 
-    }
+    
 
     //   点击注册
-    go = () => {
-        // this.props.history.push(`/mine/`)
+    // go = () => {
 
-    }
+
+    // }
     componentDidMount() {
-        // this.goto()
-        //     this.textInput.validate(async (valid) => {
-        //         if (valid) {
-        //             let {username,password} = this.regForm;
-        //         }
-        //     });
+
     }
     goto = () => {
         this.props.history.push(`/home/`);
@@ -102,9 +99,7 @@ class Reg extends Component {
     }
     render() {
         const { getFieldDecorator, getFieldValue } = this.props.form;
-        
-         console.log(this.props.form.getFieldValue);
-        //    console.log(getFieldValue(email))
+      
         return (
             <div className="box-reg">
                 <header>
@@ -134,14 +129,13 @@ class Reg extends Component {
                             <Input
                                 prefix={<Icon type="user" />}
                                 placeholder="手机 / 邮箱"
-                                // value={setFieldValue('email')}
-                                // value={this.state.email } onChange={this.changeemail}
-                                />
+                         
+                            />
                         )}
                     </Form.Item>
 
                     {/* 密码 */}
-                    <Form.Item className={`active ${this.state.confirmDirty ? 'block' : ''}`}>
+                    <Form.Item className={`active ${this.state.confirmDirty? 'block':''}`}>
                         {getFieldDecorator('password', {
                             rules: [
                                 {
@@ -190,7 +184,7 @@ class Reg extends Component {
                     </Form.Item>
                     <Form.Item className={`active ${this.state.confirmDirty ? 'block' : ''}`}>
                         <Button type="primary" htmlType="submit" className="login-form-button"
-                            onClick={this.go.bind(this)}
+                            // onClick={this.go.bind(this)}
 
                         >
                             注册

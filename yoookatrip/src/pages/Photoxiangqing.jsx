@@ -32,38 +32,37 @@ class Photoxiangqing extends Component {
                     <div className="more"><Icon type="bars" /></div>
                 </div>
 
-                <div className="media">
+                <div className="media_photo">
                     <img src={data.url} />
                 </div>
-                <div className="comment">
+                <div className="comment_photo">
                     <a href=""><img src="http://st.saihuitong.com/res/img/avatars/system/4_ava029.jpg" /></a>
-                    <p className="wen_photo">180***5382&nbsp;&nbsp;&nbsp;&nbsp;10-29&nbsp;&nbsp;&nbsp;&nbsp;16:51:29</p>
-                    <i className="eyeleft_photo"><Icon type="eye" />&nbsp;&nbsp;53</i>
-                    <i className="eyeright_photo"><Icon type="message" />&nbsp;&nbsp;3</i>
+                    <p className="wen_photo">180***5382&nbsp;&nbsp;&nbsp;&nbsp;10-29&nbsp;&nbsp;&nbsp;&nbsp;16:51:29                    <span className="eyeleft_photo"><Icon type="eye" />&nbsp;&nbsp;53</span>
+                    <span className="eyeright_photo"><Icon type="message" />&nbsp;&nbsp;3</span></p>
                 </div>
                 <div className="reply">
-                    <h2>网友评论</h2>
+                    <p className="pinglun_photo">网友评论</p>
                 </div>
-                <ul className="replylist">
-                    <li>
+                <div className="replylist">
+                    <div className="li-photp">
                         <img src="http://st.saihuitong.com/res/img/avatars/system/4_ava029.jpg" />
-                        <a>180****5382</a>
-                        <span>2019-11-01&nbsp;&nbsp;21:59</span>
+                        <a className="num_photo">180****5382</a>
+                        <span className="time_photo">2019-11-01&nbsp;&nbsp;21:59</span>
                         <p className="wenh">h</p>
-                    </li>
-                    <li>
+                    </div>
+                    <div className="li-photp">
                         <img src="http://st.saihuitong.com/res/img/avatars/system/6_ava026.jpg" />
-                        <a>152****1198</a>
-                        <p className="number">2019-11-01&nbsp;&nbsp;21:59</p>
-                        <div className="text02"><img src="http://st.saihuitong.com/assets/img/emojis/qq/12.gif" /><i>sb</i></div>
-                    </li>
-                    <li>
+                        <a className="num_photo">152****1198</a>
+                        <span className="time_photo">2019-11-01&nbsp;&nbsp;21:59</span>
+                        <div className="text02_photo"><img src="http://st.saihuitong.com/assets/img/emojis/qq/12.gif" /><i className="sb_photo">sb</i></div>
+                    </div>
+                    <div className="li-photp">
                         <img src="http://st.saihuitong.com/res/img/avatars/system/4_ava029.jpg" />
-                        <a>180****5382</a>
-                        <p className="number03">2019-11-01&nbsp;&nbsp;21:59</p>
-                        <div className="text03"><i>太美啦</i><img src="http://st.saihuitong.com/assets/img/emojis/qq/2.gif" /></div>
-                    </li>
-                </ul>
+                        <a className="num_photo">180****5382</a>
+                        <span className="time_photo">2019-11-01&nbsp;&nbsp;21:59</span>
+                        <div className="text02_photo"><i className="tml_photo">太美啦</i><img className="hua_photo" src="http://st.saihuitong.com/assets/img/emojis/qq/2.gif" /></div>
+                    </div>
+                </div>
                 <div className="none">
                     没有更多了
                 </div>

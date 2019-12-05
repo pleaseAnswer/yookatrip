@@ -4,6 +4,7 @@ const Router = express.Router();
 //引入数据库操作方式
 const {
     find,create,remove,update
+
 } = require('../db/mongodb')
 const {
     formatData
@@ -43,6 +44,7 @@ Router.get('/activity', async (req, res) => {
         data: result
     }))
 })
+
 //查询数据库
 Router.get('/activity/:id', async (req, res) => {
     //查询数据库
@@ -54,8 +56,6 @@ Router.get('/activity/:id', async (req, res) => {
         data: result
     }))
 })
-
-
 
 Router.post('/cart', async (req, res) => {
     let {
@@ -82,6 +82,7 @@ Router.post('/cart', async (req, res) => {
         res.send(formatData({status:0}));
     }
 })
+
 Router.get('/xiangqing', async (req, res) => {
     //查询数据库
     let result = await find('xiangqing'); //得到一个promise对象
@@ -156,5 +157,51 @@ Router.get('/photolist/:id', async (req, res) => {
         data: result
     }))
 })
+
+//注册
+Router.post('/reg', async (req, res) => {
+    //校验用户名
+
+
+    let {
+        email,
+        password
+    } = req.body;
+
+    let result = await create("userList", {
+        email,
+        password
+    })
+
+
+    if (result.insertedCount > 0) {
+        res.send(formatData());
+    } else {
+        res.send(formatData({
+            status: 0
+        }));
+    }
+})
+
+// 登录
+Router.get('/login', async (req, res) => {
+    let {
+        email,
+        password
+    } = req.query;
+    let data = await find("userList", {
+        email,
+        password
+    })
+    if (data.length > 0) {
+        res.send(formatData());
+    } else {
+        res.send(formatData({
+            status: 0
+        }));
+    }
+
+})
+
 
 module.exports = Router;
