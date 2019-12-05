@@ -170,13 +170,9 @@ class Login extends Component {
 }
 
 const WrappedNormalLoginForm = Form.create({ name: 'normal_login' })(Login);
-<<<<<<< HEAD
+
 Login = connect(mapStateToProps)(Login)
 Login = withRouter(Login)
   
 export default  WrappedNormalLoginForm;
-=======
 
-
-export default WrappedNormalLoginForm;
->>>>>>> b1e074c97331a60f30b19be952f7304dbf87d68b
