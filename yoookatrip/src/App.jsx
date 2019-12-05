@@ -84,8 +84,7 @@ class App extends React.Component {
         this.setState({
           currentPath: this.props.history.location.pathname ? this.props.history.location.pathname : '/home'
         })
-        console.log(this.state.currentPath);
-        console.log(this.props.history.location);
+        
       }
     render() {
         return (

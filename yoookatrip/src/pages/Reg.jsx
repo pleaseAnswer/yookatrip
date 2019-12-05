@@ -81,13 +81,7 @@ class Reg extends Component {
         })
     }
 
-    
 
-    //   点击注册
-    // go = () => {
-
-
-    // }
     componentDidMount() {
 
     }
