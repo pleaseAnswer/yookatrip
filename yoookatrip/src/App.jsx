@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Redirect, Switch, Link, NavLink, withRouter } from 'react-router-dom';
+import { Route, Redirect, Switch, NavLink, withRouter } from 'react-router-dom';
 import { Icon } from 'antd';
 import 'antd/dist/antd.css';
 import './css/App.css';

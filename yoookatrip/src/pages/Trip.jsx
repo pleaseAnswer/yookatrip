@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Icon, Input, Carousel, Menu, Dropdown } from 'antd';
+import { Icon, Input,  Menu, Dropdown } from 'antd';
 import "../css/trip.scss";
 import { my } from '../api'
 class Reg extends Component {

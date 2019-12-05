@@ -2,7 +2,7 @@ import React,{Component}  from 'react';
 import '../css/login.scss';
 
 
-import  {Icon,Form, Input, Button, } from 'antd'
+import  {Icon,Form, Input, Button} from 'antd'
 
 class Login extends  Component{
 

@@ -15,8 +15,15 @@ function get(path,params,config={}){
 function post(path,data={},config={}){
     return my.post(path,data,config)
 }
-
+function patch(path,data={},config={}){
+    return my.patch(path,data,config)
+}
+function remove(path,data={},config={}){
+    return my.delete(path,data,config)
+}
 export default {
     get,
-    post
+    post,
+    patch,
+    remove
 }

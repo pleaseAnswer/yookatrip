@@ -3,7 +3,7 @@ import moment from 'moment';
 import LazyLoad from 'react-lazyload';
 import my from '../api/my';
 import '../css/Ativity.scss';
-import { Icon, Carousel, Menu, Dropdown } from 'antd';
+import { Icon, Menu, Dropdown } from 'antd';
 
 class Activity extends Component {
     state = {
