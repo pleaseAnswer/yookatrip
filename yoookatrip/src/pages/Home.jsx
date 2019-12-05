@@ -107,7 +107,7 @@ class Home extends Component {
                 <div className="data-mode">
                     <div className="mode-title">
                         <span className="title-setColor">优客活动</span>
-                        <span className="setColor">更多 ></span>
+                        <span className="setColor" onClick={this.goto2.bind(this, '/activity')}>更多 ></span>
                     </div>
                     <div className="maina">
                         <ul className="mode-act">
@@ -130,7 +130,7 @@ class Home extends Component {
                 <div className="data-mode">
                     <div className="mode-title">
                         <span className="title-setColor">精彩片段</span>
-                        <span className="setColor">更多 ></span>
+                        <span className="setColor" onClick={this.goto2.bind(this, '/photo')}>更多 ></span>
                     </div>
                     <div className="maina">
                         <ul className="mode-pic">
@@ -156,7 +156,7 @@ class Home extends Component {
                 <div className="bottom">
                     <div className="mode-title">
                         <span className="title-setColor">出行指南</span>
-                        <span className="setColor">更多 ></span>
+                        <span className="setColor" onClick={this.goto2.bind(this, '/trip')}>更多 ></span>
                     </div>
                     <ul className="mode-news-img">
                         {
