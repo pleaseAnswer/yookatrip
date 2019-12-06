@@ -3,6 +3,9 @@
 > 后台管理系统提供各部门管理员信息查看、用户注册信息管理、相册信息管理以及出行贴士信息管理。
 
 ### 上线地址：
+* webApp：http://www.xn--fw2ak3t.top:1920/
+* 后台管理系统：http://www.xn--fw2ak3t.top:1921/
+>后台管理系统登录账号&密码：2737252@qq.com & 123456
 
 ### git仓库地址：
 * https://github.com/gzh51910/yookatrip/tree/dev
