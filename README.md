@@ -11,7 +11,7 @@
 * 前端：React React-dom React-router-dom  redux React-redux Ant Design 
 * 后端：nodejs Express MongoDB
 
-###### 周悦欣：
+### 项目职责：
 * 优客活动：使用语义化标签实现静态页面渲染以及实现了让字体在谷歌浏览器显示小于12像素；利用axios请求数据渲染页面。
 * 活动详情页：使用antd框架实现静态页面渲染，利用axios请求数据渲染页面，以及实现将数据写入购物车。
 * 购物车：使用antd框架实现静态页面渲染，利用redux-saga实现页面渲染和删除功能（暂未实现）
