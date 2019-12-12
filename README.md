@@ -20,7 +20,7 @@
 
 ### 项目页面截图：
 * webAPP
-    ![home](https://github.com/gzh51910/yookatrip/blob/dev/project_img/yookatrip-home.png)
+    ![home](https://github.com/pleaseAnswer/yookatrip/blob/dev/project_img/yookatrip-home.png)
     ![游客活动](https://github.com/gzh51910/yookatrip/blob/dev/project_img/active.png)
     ![相册](https://github.com/gzh51910/yookatrip/blob/dev/project_img/photo.png)
     ![个人中心](https://github.com/gzh51910/yookatrip/blob/dev/project_img/mine.png)
